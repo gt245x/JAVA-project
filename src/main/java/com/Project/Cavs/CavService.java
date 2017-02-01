@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CavService {
-	
+
 	@Autowired
 	private CavalierRepository cavalierRepository;
 
@@ -19,19 +19,19 @@ public class CavService {
 		.forEach(cavaliers:: add);
 		return cavaliers;
 	}
-	
+
 	public Cavalier getPlayer(String id) {
 		return cavalierRepository.findOne(id);
 	}
 
 	public void addPlayer(Cavalier cavalier) {
 		cavalierRepository.save(cavalier);
-		
+
 	}
 
-	public void updatePlayer(Long id, Cavalier cavalier) {
+	public void updatePlayer(String id, Cavalier cavalier) {
 		cavalierRepository.save(cavalier);
-		
+
 	}
 
 	public void deletePlayer(String id) {
