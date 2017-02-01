@@ -32,7 +32,7 @@ public class CavController {
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT, value="/api/players/{id}")
-	public void updatePlayer(@RequestBody Cavalier cavalier, @PathVariable Long id) {
+	public void updatePlayer(@RequestBody Cavalier cavalier, @PathVariable String id) {
 		cavService.updatePlayer(id, cavalier);
 	}
 	

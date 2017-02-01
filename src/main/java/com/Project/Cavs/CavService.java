@@ -29,7 +29,7 @@ public class CavService {
 		
 	}
 
-	public void updatePlayer(Long id, Cavalier cavalier) {
+	public void updatePlayer(String id, Cavalier cavalier) {
 		cavalierRepository.save(cavalier);
 		
 	}
