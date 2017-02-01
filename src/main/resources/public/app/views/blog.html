@@ -1,0 +1,41 @@
+<div class="container">
+    <h1>{{header}}</h1>
+
+    <div>
+        <input  ng-model="post.title" class="form-control" placeholder="title" />
+        <br />
+
+        <textarea ng-model="post.content" class="form-control" placeholder="content"></textarea>
+
+        <br />
+        <button ng-click="createPost(post)" ng-disabled="!post.title || !post.content" ng-show="!isAnyEditing()" class="btn btn-primary">Post</button>
+
+        <button ng-click="updatePost(post)" ng-disabled="!post.title || !post.content" ng-show="isAnyEditing()" class="btn btn-success">Update</button>
+
+        <br /> <br />
+        {{missingItemError}}
+    </div>
+    <div ng-repeat="post in allposts">
+        <h3>
+            {{post.title}}
+            <a style="cursor:pointer" ng-click="editPost(post.id)" class="pull-right" >
+                <span class="glyphicon glyphicon-pencil" ng-hide="isEditing[post.id]"></span></a>
+
+            <a style="cursor:pointer" ng-click="updatePost()" ng-show="isEditing[post.id]" class="pull-right">
+                <span class="glyphicon glyphicon-ok"></span></a>
+            <a style="cursor:pointer" ng-click="deletePost(post.id)" ng-hide="isEditing[post.id]"
+               class="pull-right"><span class="glyphicon glyphicon-trash"></span></a>
+
+            <button ng-show="isEditing[post.id]"" ng-click="backAction(post.id)" class="btn btn-primary pull-right">Back</button>
+
+        </h3>
+        <em>{{post.posted | date:'yyyy-MM-dd HH:mm:ss' }}</em>
+        <p>{{post.content}}</p>
+
+        <hr>
+    </div>
+
+
+
+
+</div>
