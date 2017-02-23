@@ -17,7 +17,7 @@
 
 ## FEATURES
 
-- The app shows 2 distinct applications of CRUD
+- The app shows 2 distinct applications of CRUD functionalities
 - Extensive use of numerous AngularJS features.
 - Use of PostgreSQL and mySQL database
 - Use of Hibernate to connect to the database.
